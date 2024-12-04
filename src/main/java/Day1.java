@@ -6,7 +6,7 @@ import java.util.*;
 class Day1 {
 
     public static void main(String[] args) throws IOException {
-        List<String> lines = Files.lines(Path.of("./day1/input.txt")).toList();
+        List<String> lines = Files.lines(Path.of("src/main/resources/day1/input.txt")).toList();
         part1(lines);
         part2(lines);
     }

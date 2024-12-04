@@ -7,7 +7,7 @@ import java.util.List;
 class Day2 {
 
     public static void main(String[] args) throws IOException {
-        try (var lines = Files.lines(Path.of("./day2/input.txt"))) {
+        try (var lines = Files.lines(Path.of("src/main/resources/day2/input.txt"))) {
             var reports = lines.map(line -> {
                 List<Integer> levels = new ArrayList<>();
                 for (String level : line.split(" ")) {
