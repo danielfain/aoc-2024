@@ -6,9 +6,11 @@ import java.util.*;
 class Day1 {
 
     public static void main(String[] args) throws IOException {
-        List<String> lines = Files.lines(Path.of("src/main/resources/day1/input.txt")).toList();
-        part1(lines);
-        part2(lines);
+        try (var linesStream = Files.lines(Path.of("src/main/resources/day1/input.txt"))) {
+            List<String> lines = linesStream.toList();
+            part1(lines);
+            part2(lines);
+        }
     }
 
     public static void part1(List<String> lines) {
@@ -32,7 +34,7 @@ class Day1 {
             totalDistance += Math.abs(leftLocationId - rightLocationId);
         }
 
-        System.out.println("Part 1 answer: " + totalDistance);
+        System.out.println("Part 1: " + totalDistance);
     }
 
     public static void part2(List<String> lines) {
@@ -56,7 +58,7 @@ class Day1 {
             similarityScore += leftLocationId * rightLocationIdCounts.getOrDefault(leftLocationId, 0);
         }
 
-        System.out.println("Part 2 answer: " + similarityScore);
+        System.out.println("Part 2: " + similarityScore);
     }
 
 }
